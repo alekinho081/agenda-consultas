@@ -1,8 +1,11 @@
 Sistema de Gestão de Reservas e Consultas 🏥
+
 📝 Sobre a Aplicação
 
 O sistema foi projetado para modernizar o atendimento de uma clínica de saúde, substituindo agendamentos manuais por um fluxo digital integrado. A aplicação funciona como uma plataforma multiplataforma que conecta três perfis principais: pacientes, médicos e administradores.
+
 ⚙️ Funcionamento do Sistema
+
 1. Fluxo do Paciente
 
     Agendamento Online: O usuário acessa a plataforma via web e visualiza a disponibilidade dos médicos em tempo real.
