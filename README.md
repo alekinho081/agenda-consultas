@@ -1,73 +1,30 @@
-# React + TypeScript + Vite
+Sistema de Gestão de Reservas e Consultas 🏥
+📝 Sobre a Aplicação
 
-This template provides a minimal setup to get React working in Vite with HMR and some ESLint rules.
+O sistema foi projetado para modernizar o atendimento de uma clínica de saúde, substituindo agendamentos manuais por um fluxo digital integrado. A aplicação funciona como uma plataforma multiplataforma que conecta três perfis principais: pacientes, médicos e administradores.
+⚙️ Funcionamento do Sistema
+1. Fluxo do Paciente
 
-Currently, two official plugins are available:
+    Agendamento Online: O usuário acessa a plataforma via web e visualiza a disponibilidade dos médicos em tempo real.
 
-- [@vitejs/plugin-react](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react) uses [Babel](https://babeljs.io/) (or [oxc](https://oxc.rs) when used in [rolldown-vite](https://vite.dev/guide/rolldown)) for Fast Refresh
-- [@vitejs/plugin-react-swc](https://github.com/vitejs/vite-plugin-react/blob/main/packages/plugin-react-swc) uses [SWC](https://swc.rs/) for Fast Refresh
+    Seleção de Horários: O sistema impede agendamentos duplicados, garantindo que cada slot de tempo seja único.
 
-## React Compiler
+    Notificações: Após a marcação, o sistema gera automaticamente lembretes de consulta para reduzir as taxas de esquecimento e faltas.
 
-The React Compiler is not enabled on this template because of its impact on dev & build performances. To add it, see [this documentation](https://react.dev/learn/react-compiler/installation).
+    Gestão de Consultas: O paciente pode solicitar o cancelamento ou reagendamento de forma autônoma através da interface.
 
-## Expanding the ESLint configuration
+2. Gestão Médica e Administrativa
 
-If you are developing a production application, we recommend updating the configuration to enable type-aware lint rules:
+    Painel do Médico: Os profissionais de saúde podem visualizar sua agenda organizada, evitando conflitos de horários e sobrecarga.
 
-```js
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
+    Controle Administrativo: A equipe da clínica gerencia o fluxo de pacientes e a organização das escalas médicas através de um painel de controle centralizado.
 
-      // Remove tseslint.configs.recommended and replace with this
-      tseslint.configs.recommendedTypeChecked,
-      // Alternatively, use this for stricter rules
-      tseslint.configs.strictTypeChecked,
-      // Optionally, add this for stylistic rules
-      tseslint.configs.stylisticTypeChecked,
+    Sincronização de Dados: Todas as alterações de horários (cancelamentos ou novos registros) são atualizadas instantaneamente para todos os usuários.
 
-      // Other configs...
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+🎯 Regras de Negócio e Requisitos
 
-You can also install [eslint-plugin-react-x](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-x) and [eslint-plugin-react-dom](https://github.com/Rel1cx/eslint-react/tree/main/packages/plugins/eslint-plugin-react-dom) for React-specific lint rules:
+    Integridade de Dados: O sistema deve garantir que as informações de saúde e horários sejam mantidos de forma segura e íntegra.
 
-```js
-// eslint.config.js
-import reactX from 'eslint-plugin-react-x'
-import reactDom from 'eslint-plugin-react-dom'
+    Usabilidade: A interface é desenhada para ser intuitiva, permitindo que o agendamento seja concluído de forma rápida e eficiente.
 
-export default defineConfig([
-  globalIgnores(['dist']),
-  {
-    files: ['**/*.{ts,tsx}'],
-    extends: [
-      // Other configs...
-      // Enable lint rules for React
-      reactX.configs['recommended-typescript'],
-      // Enable lint rules for React DOM
-      reactDom.configs.recommended,
-    ],
-    languageOptions: {
-      parserOptions: {
-        project: ['./tsconfig.node.json', './tsconfig.app.json'],
-        tsconfigRootDir: import.meta.dirname,
-      },
-      // other options...
-    },
-  },
-])
-```
+    Robustez: A aplicação deve ser capaz de lidar com múltiplos acessos simultâneos sem perda de desempenho no processamento das reservas
